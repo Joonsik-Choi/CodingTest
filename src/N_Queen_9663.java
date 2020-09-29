@@ -14,7 +14,6 @@ public class N_Queen_9663 {
 
     }
     static void queen(int i, int n){
-
         for (int j = 0; j <n ; j++) {
             if (i < n) {
                 boolean check=true;
