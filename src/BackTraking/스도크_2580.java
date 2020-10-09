@@ -1,3 +1,5 @@
+package BackTraking;
+
 import java.util.Scanner;
 
 public class 스도크_2580 {

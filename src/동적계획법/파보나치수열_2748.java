@@ -1,3 +1,5 @@
+package 동적계획법;
+
 import java.util.Scanner;
 
 public class 파보나치수열_2748 {

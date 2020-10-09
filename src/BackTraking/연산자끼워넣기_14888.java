@@ -1,3 +1,5 @@
+package BackTraking;
+
 import java.util.Scanner;
 
 public class 연산자끼워넣기_14888 {

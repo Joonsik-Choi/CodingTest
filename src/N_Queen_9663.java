@@ -18,7 +18,7 @@ public class N_Queen_9663 {
             if (i < n) {
                 boolean check=true;
                 for (int k = 0; k < i; k++) {
-                    if (num[k] == j || (Math.abs(j-num[k])==Math.abs(i-j)) ) {
+                    if (num[k] == j  || (Math.abs(j-num[k])==Math.abs(i-k))) {
                         check = false;
                         break;
                     }
@@ -29,10 +29,6 @@ public class N_Queen_9663 {
                 }
             }
             else{
-                for (int k = 0; k < n; k++) {
-                    System.out.print(num[k]+" ");
-                }
-                System.out.println();
                 total++;
                 break;
             }
