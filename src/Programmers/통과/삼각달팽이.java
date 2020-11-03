@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.통과;
 
 public class 삼각달팽이 {
     public static void main(String[] args) {
