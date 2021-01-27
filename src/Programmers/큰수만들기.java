@@ -1,40 +1,34 @@
 package Programmers;
+
+import java.util.Stack;
+
 public class 큰수만들기 {
     public static void main(String[] args) {
-        String s="123412523156234236123342361234236123423612341236512342352136236345234634723453754845675634547";
-        System.out.println(solution(s, 10));
+        String s="1924";
+        System.out.println(solution(s, 1));
     }
     public static String solution(String number, int k) {
-        int totalNumLen=number.length()-k;
-        int numberLen=number.length();
-        int max=0;
-        int n;
-        for (int i = 0; i < totalNumLen; i++) {
-            n=number.charAt(i)-'0';
-            if(max<n)max=n;
-            if(max==9)break;
-        }
-        int i=0;
-        for (  i= 0; i < totalNumLen; i++) {
-            if(number.charAt(i)-'0'==max)break;
-        }
-        StringBuffer buffer=new StringBuffer();
-        for (int j = 0; j < totalNumLen; j++) {
-            for (int l = i+1; l < numberLen; l++) {
-                if(numberLen-l>=totalNumLen-j) {
-                    if (number.charAt(i)< number.charAt(l)) {
-                        i = l;
+            StringBuilder sb = new StringBuilder();
+            int cnt = number.length() - k;
+            int left = 0;
+            int right = number.length() - cnt;
+            int max = -1;
+            int idx = 0;
+
+            while(cnt > 0) {
+                max = -1;
+                for(int j = left ; j <= right ; ++j){
+                    int num = number.charAt(j) - '0';
+                    if(num > max){
+                        idx = j;
+                        max = num;
                     }
                 }
-                else{
-                    break;
-                }
+                sb.append(number.charAt(idx));
+                left = idx + 1;
+                right = number.length() - --cnt;
             }
-            buffer.append(number.charAt(i)-48);
-                i++;
+
+            return sb.toString();
         }
-        String answer=buffer.toString();
-        if(answer.equals(""))answer="0";
-        return answer;
-    }
 }

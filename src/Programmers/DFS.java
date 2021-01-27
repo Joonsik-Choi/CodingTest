@@ -21,7 +21,6 @@ public class DFS {
             Point1 p=pointStack.pop();
             x=p.getX();
             y=p.getY();
-
             for (int i = 0; i < 4; i++) {
                 int nX =x+ dX[i];
                 int nY=y + dY[i];
